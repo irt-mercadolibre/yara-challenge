@@ -139,11 +139,11 @@ Crear una regla Yara que permita encontrar `access_token` con el siguiente forma
 Crear una regla Yara que permita encontrar `access_token` que hayan sido creados después del 31 de enero de 2016
 
 ## Extras
-Logging
-Agregar tests
-Documentación
-Autenticación en la api
-Sumar funcionalidades (ejemplo: dada una url, bajar el contenido y analizarlo con reglas yara)
+- Logging
+- Agregar tests
+- Documentación
+- Autenticación en la api
+- Sumar funcionalidades (ejemplo: dada una url, bajar el contenido y analizarlo con reglas yara)
 
 **Recordá que cuanto mas fácil sea de reproducir y podamos ver todo lo que hiciste, mejor :D**
 
