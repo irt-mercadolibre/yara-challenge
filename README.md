@@ -1,8 +1,9 @@
 # The Yara API Challenge
 
 Como equipo de **seguridad informática** tenemos la necesidad de buscar en textos y binarios algunos patrones que pueden ir desde información sensible hasta malware. Para eso necesitamos integrar **[Yara](http://virustotal.github.io/yara/)** con una **API** que nos permita manejar reglas y analizar estos archivos o textos en busca de estos patrones.
-
+Es importante que como esta API va a tener bastante trafico, no tenga que cargar las reglas cada vez que tenga que hacer un análisis.
 El challenge consta de una implementación básica y dos optativas y algunos extras.
+Se puede implementar con el lenguaje de programación que prefieras, frameworks y librerias que creas necesarios pero si es importante usar [Docker](https://www.docker.com/) para que sea reproducible facilmente y podamos probarlo.
 
 
 ## Implementación básica
@@ -18,19 +19,17 @@ Body:
 	    "name":"esto no es coca papi rule",
 	    "rule":"rule EstoNoEsCocaPapiRule\r\n{\r\n strings:\r\n $my_text_string = \"esto no es coca papi\"\r\n condition:\r\n $my_text_string\r\n}"
     }
- Response Code: `201` en caso de éxito y en caso de error un status code correspondiente al tipo de error
- Response Body:
- 
 
+Response Code: `201` en caso de éxito y en caso de error un status code correspondiente al tipo de error
+Response Body:
     {
 	    “id”:1,
 	    "name":"esto no es coca papi rule",
 	    "rule":"rule EstoNoEsCocaPapiRule\r\n{\r\n strings:\r\n $my_text_string = \"esto no es coca papi\"\r\n condition:\r\n $my_text_string\r\n}"
     }
    
-   Curl de ejemplo:
+Curl de ejemplo:
    
-
     curl --request POST \
     --url http://localhost:8080/api/rule \
     --header 'content-type: application/json' \
@@ -45,12 +44,12 @@ Path: `/api/analyze/text`
 Body:
 
     {
-	“text”:”esto es un texto a analizar”,
-	"rules": 
-		[
-			{"rule_id": 1},
-			{"rule_id": 2}
-		]
+	    “text”:”esto es un texto a analizar”,
+	    "rules": 
+		    [
+			    {"rule_id": 1},
+			    {"rule_id": 2}
+		    ]
     }
  Response Code: `200` en caso de éxito y en caso de error un status code correspondiente al tipo de error
  Response Body:
@@ -65,7 +64,7 @@ Body:
 			{
 				"rule_id": 2,
 				"matched": false
-			}
+		  }
 		]
 	}
 
@@ -111,6 +110,7 @@ Body:
 			}
 		]
 	}
+
 Curl de ejemplo:
 
     curl -X POST \
@@ -127,9 +127,10 @@ Persistir en esta base de datos, los resultados de los textos y archivos analiza
 Crear una regla Yara que permita encontrar tarjetas de crédito
 Crear una regla Yara que permita encontrar `access_token` con el siguiente formato
 
-    token de ejemplo: TOKEN_20140603_112332
-    20140603: fecha de creacion del token
-    112332: userid
+    token de ejemplo: TOKEN_2014-06-03_112332
+    2014-06-03: fecha de creacion del token en formato año-mes-dia
+    112332: id de usuario
+
 Crear una regla Yara que permita encontrar `access_token` que hayan sido creados después del 31 de enero de 2016
 
 ## Extras
