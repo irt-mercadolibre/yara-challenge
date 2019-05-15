@@ -45,12 +45,12 @@ Path: `/api/analyze/text`
 Body:
 
     {
-	    “text”:”esto es un texto a analizar”,
-	    "rules": 
-		    [
-			    {"rule_id": 1},
-			    {"rule_id": 2}
-		    ]
+	“text”:”esto es un texto a analizar”,
+	"rules": 
+		[
+			{"rule_id": 1},
+			{"rule_id": 2}
+		]
     }
  Response Code: `200` en caso de éxito y en caso de error un status code correspondiente al tipo de error
  Response Body:
