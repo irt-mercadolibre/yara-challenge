@@ -1,11 +1,8 @@
 # The Yara API Challenge
 
 Como equipo de **seguridad informática** tenemos la necesidad de buscar en textos y binarios algunos patrones que pueden ir desde información sensible hasta malware. Para eso necesitamos integrar **[Yara](http://virustotal.github.io/yara/)** con una **API** que nos permita manejar reglas y analizar estos archivos o textos en busca de estos patrones.
-
 Es importante que como esta API va a tener bastante trafico, no tenga que cargar las reglas cada vez que tenga que hacer un análisis.
-
 Se puede implementar con el lenguaje de programación que prefieras, frameworks y librerias que creas necesarios pero si es importante usar [Docker](https://www.docker.com/) para que sea reproducible facilmente y podamos probarlo.
-
 El challenge consta de una implementación básica y dos optativas y algunos extras.
 
 
@@ -36,12 +33,12 @@ Response Body:
 Curl de ejemplo:
    
     curl --request POST \
-    --url http://localhost:8080/api/rule \
-    --header 'content-type: application/json' \
-    --data '{
-    "name":"esto no es coca papi rule",
-    "rule":"rule EstoNoEsCocaPapiRule\r\n{\r\n strings:\r\n $my_text_string = \"esto no es coca papi\"\r\n condition:\r\n $my_text_string\r\n}"
-    }'
+      --url http://localhost:8080/api/rule \
+      --header 'content-type: application/json' \
+      --data '{
+      "name":"esto no es coca papi rule",
+      "rule":"rule EstoNoEsCocaPapiRule\r\n{\r\n strings:\r\n $my_text_string = \"esto no es coca papi\"\r\n condition:\r\n   $my_text_string\r\n}"
+      }'
 
   ### Analyze text
 Metodo: `POST`
@@ -69,7 +66,7 @@ Body:
 			{
 				"rule_id": 2,
 				"matched": false
-		  }
+		    }
 		]
 	}
 
@@ -132,9 +129,9 @@ Persistir en esta base de datos, los resultados de los textos y archivos analiza
 - Crear una regla Yara que permita encontrar tarjetas de crédito
 - Crear una regla Yara que permita encontrar `access_token` con el siguiente formato
 
-    token de ejemplo: TOKEN_2014-06-03_112332
-    2014-06-03: fecha de creacion del token en formato año-mes-dia
-    112332: id de usuario
+        token de ejemplo: TOKEN_2014-06-03_112332
+        2014-06-03: fecha de creacion del token en formato año-mes-dia
+        112332: id de usuario
 
 - Crear una regla Yara que permita encontrar `access_token` que hayan sido creados después del 31 de enero de 2016
 
