@@ -129,14 +129,14 @@ Sumar al `POST`, un `PUT` y `GET` de reglas con persistencia en una base de dato
 Persistir en esta base de datos, los resultados de los textos y archivos analizados.
 
 ## Implementación optativa 2
-Crear una regla Yara que permita encontrar tarjetas de crédito
-Crear una regla Yara que permita encontrar `access_token` con el siguiente formato
+- Crear una regla Yara que permita encontrar tarjetas de crédito
+- Crear una regla Yara que permita encontrar `access_token` con el siguiente formato
 
     token de ejemplo: TOKEN_2014-06-03_112332
     2014-06-03: fecha de creacion del token en formato año-mes-dia
     112332: id de usuario
 
-Crear una regla Yara que permita encontrar `access_token` que hayan sido creados después del 31 de enero de 2016
+- Crear una regla Yara que permita encontrar `access_token` que hayan sido creados después del 31 de enero de 2016
 
 ## Extras
 - Logging
