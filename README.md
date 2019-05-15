@@ -143,7 +143,7 @@ Logging
 Agregar tests
 Documentación
 Autenticación en la api
-Sumar funcionalidades
+Sumar funcionalidades (ejemplo: dada una url, bajar el contenido y analizarlo con reglas yara)
 
 **Recordá que cuanto mas fácil sea de reproducir y podamos ver todo lo que hiciste, mejor :D**
 
