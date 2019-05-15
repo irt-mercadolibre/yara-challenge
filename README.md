@@ -1,9 +1,12 @@
 # The Yara API Challenge
 
 Como equipo de **seguridad informática** tenemos la necesidad de buscar en textos y binarios algunos patrones que pueden ir desde información sensible hasta malware. Para eso necesitamos integrar **[Yara](http://virustotal.github.io/yara/)** con una **API** que nos permita manejar reglas y analizar estos archivos o textos en busca de estos patrones.
+
 Es importante que como esta API va a tener bastante trafico, no tenga que cargar las reglas cada vez que tenga que hacer un análisis.
-El challenge consta de una implementación básica y dos optativas y algunos extras.
+
 Se puede implementar con el lenguaje de programación que prefieras, frameworks y librerias que creas necesarios pero si es importante usar [Docker](https://www.docker.com/) para que sea reproducible facilmente y podamos probarlo.
+
+El challenge consta de una implementación básica y dos optativas y algunos extras.
 
 
 ## Implementación básica
@@ -21,11 +24,13 @@ Body:
     }
 
 Response Code: `201` en caso de éxito y en caso de error un status code correspondiente al tipo de error
+
 Response Body:
+
     {
-	    “id”:1,
-	    "name":"esto no es coca papi rule",
-	    "rule":"rule EstoNoEsCocaPapiRule\r\n{\r\n strings:\r\n $my_text_string = \"esto no es coca papi\"\r\n condition:\r\n $my_text_string\r\n}"
+	    "id": 1,
+	    "name": "esto no es coca papi rule",
+	    "rule": "rule EstoNoEsCocaPapiRule\r\n{\r\n strings:\r\n $my_text_string = \"esto no es coca papi\"\r\n condition:\r\n $my_text_string\r\n}"
     }
    
 Curl de ejemplo:
