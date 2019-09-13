@@ -46,7 +46,7 @@ Path: `/api/analyze/text`
 Body:
 
     {
-	    “text”:”esto es un texto a analizar”,
+	    "text":"esto es un texto a analizar",
 	    "rules": 
 		    [
 			    {"rule_id": 1},
@@ -73,7 +73,7 @@ Body:
    Curl de ejemplo:   
 
     curl --request POST \
-      --url http://localhost:8080/api/analyze \
+      --url http://localhost:8080/api/analyze/text \
       --header 'content-type: application/json' \
       --data '{
     	“text”: ”estoesuntextoaanalizar”,
@@ -89,7 +89,7 @@ Body:
 
 ### Analyze file
 Metodo: `POST`
-Path: `/api/analyze/text`
+Path: `/api/analyze/file`
 Body:  
 
     multipart/form-data
